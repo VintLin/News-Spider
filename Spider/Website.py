@@ -16,8 +16,7 @@ class Website(object):
         self.F = SpiderTool.FileTool()
 
     def getParams(self, url):
-        # try:
-            print('url : ', url)
+        try:
             bs_obj = self.S.getBsObj(url)
             time = self.getTime(bs_obj)
             title = self.getTitle(bs_obj)
@@ -27,11 +26,13 @@ class Website(object):
             type = self.getType(bs_obj)
             content = self.S.getContent(title=title, time=time, source=source, editor=editor, text=text)
             news = News(title=title, time=time, type=type)
+            print('url : ', url)
+            print(title, time, source)
             self.F.saveFile(url, content, news)
-        # except AttributeError:
-        #     print('AttributeError')
-        # except IndexError:
-        #     print('IndexError')
+        except AttributeError:
+            print('AttributeError')
+        except IndexError:
+            print('IndexError')
 
     def crawl(self):
         self.fromRank()

@@ -92,7 +92,6 @@ class FileTool:
             news.website = url.split('/')[0]
             news.filename = re.sub('\?.*|#.*', '', url.split('/')[-1])
             news.path = makeDir('page/{}/{}/{}'.format(news.type, news.time[:10], news.filename)).replace('./', '/')
-
             with open('.' + news.path, 'w', encoding='utf-8') as w:
                 w.write(content)
             news.insert()
