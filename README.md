@@ -12,20 +12,20 @@
  |    |-Exec.py
  |    |-SpiderTool.py
  |    |-Website.py
- |    |-Web
+ |    |_Web
  |       |-__init__.py
  |       |-news163com.py
  |       |-newscricn.py
  |       |-wwwfjsencom.py
- |       |-wwwsouthcncom.py
+ |       |_wwwsouthcncom.py
  |    
  |-Model
  |    |-__init__.py
- |    |-model.py
+ |    |_model.py
  |    
  |-vSQL
       |-db.json
-      |-...
+      |_...
 ```
 ## 导入包:
 ```cmd
