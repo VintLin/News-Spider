@@ -38,7 +38,8 @@ pip install requests
  1.请先移步了解 [![vSQL](https://www.python.org)](https://www.python.org) 的项目文档。<br />
  2.读者需要具有编写爬虫代码的经验(了解Re / BeautifulSoup库)。<br />
  3.由于需要将各别信息存储在数据库中,所以请配置好MySQL数据库。
-## 如何使用:
+ 
+## 一.如何使用:
 _在这个项目中已经编写了4个分别爬取 网易新闻 / 国际在线 / 东南网 / 南方网 的示例。_
 ### 1.填写db.json
 配置好MySQL后(推荐使用[![Front](http://www.mysqlfront.de/)]管理你的数据库)<br />
@@ -50,9 +51,10 @@ _在这个项目中已经编写了4个分别爬取 网易新闻 / 国际在线 /
 ### 2.运行Exec.py
 直接运行News-Spider/Spider/Exec.py爬取网页。
 
-## 爬取的数据
-_爬取的页面会被存储为*.html文件保存在News-Spider/Spider/page文件夹中<br />，
-以及该页面中新闻的一些标识信息(如:发布时间，标题...)将被存储到数据库中_
+## 二.爬取的数据
+_爬取的页面会被存储为*.html文件保存在News-Spider/Spider/page文件夹中<br />
+以及该页面中新闻的一些标识信息(如:发布时间，标题 . . . )将被存储到数据库中_
+
 ### 1.page文件夹
 在执行Exec.py后将在 News-Spider/Spider/ 目录下创建一个page文件夹用于存放新闻页面。<br />
 并以如下格式创建路径:
@@ -64,6 +66,10 @@ _爬取的页面会被存储为*.html文件保存在News-Spider/Spider/page文�
 ```shell
 /page/家居/2018-05-14/DHP0NGKO00108O8H.html
 ```
+##### 另外
+##### 爬取的网页并不是原封不动的保存在本地，而是爬取页面上的关键信息，并将其重组为新的*.html文件。
+##### 所以最后存储的*.html文件是格式统一的。
+
 ### 2.数据库中的News表
 同样是执行Exec.py后，通过使用vSQL在MySQL数据库中创建一张名为News的表。</br>
 保存如下字段:
@@ -82,10 +88,13 @@ type          char(20)          新闻类型
 ```sql
 字段           相应值
 id            x (x为int类型,数据库中存储的第x行)
-filename      DHP0NGKO00108O8H.html
-path          /page/家居/2018-05-14/DHP0NGKO00108O8H.html
-website       home.163.com
-title         陈连武新作 | 丝旅之路，复兴东方神韵
+filename      "DHP0NGKO00108O8H.html"
+path          "/page/家居/2018-05-14/DHP0NGKO00108O8H.html"
+website       "home.163.com"
+title         "陈连武新作 | 丝旅之路，复兴东方神韵"
 time          2018-05-14 11:50:41
-type          家居
+type          "家居"
 ```
+
+## 三.增加爬取目标
+//TODO
