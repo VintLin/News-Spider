@@ -27,7 +27,7 @@
       |-db.json
       |_...
 ```
-## 导入包:
+## 导入库:
 ```cmd
 pip install pymysql
 pip install BeautifulSoup4
@@ -96,5 +96,24 @@ time          2018-05-14 11:50:41
 type          "家居"
 ```
 
-## 三.增加爬取目标
-//TODO
+## 三.如何增加爬取目标
+### 1.需要爬取的数据
+###### 新闻发布时间 / 新闻标题 / 新闻来源 / 新闻编辑者 / 正文内容 / 新闻类型
+  上面就是爬取每个新闻页面所必须获取的字段
+  
+### 2.如何编写
+  编写一个类,继承News-Spider/Spider/Website.py 中的 Website类。
+  并实现Website类的抽象方法。
+  如下:
+```python
+class other_website(Website):
+    def fromRank(self): pass #
+    def getLinks(self, url): pass
+    def getTime(self, url): pass
+    def getTime(self, bs_obj): pass
+    def getTitle(self, bs_obj): pass
+    def getSource(self，bs_obj): pass
+    def getEditor(self, bs_obj): pass
+    def getText(self, bs_obj): pass
+    def getType(self, bs_obj): pass
+```
