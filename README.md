@@ -1,9 +1,9 @@
 # News-Spider
 ## Version : v011
 ##### News-Spider项目是用于爬取网页新闻的小型爬虫框架。
-[![News-Spider](https://github.com/VoterLin/News-Spider)](https://github.com/VoterLin/News-Spider)
-[![vSQL](https://www.python.org)](https://www.python.org)
-[![Python3.7](https://pypi.python.org/pypi/pubnub/)](https://pypi.python.org/pypi/pubnub/)
+![News-Spider](https://github.com/VoterLin/News-Spider)
+![vSQL](https://www.python.org)
+![Python3.7](https://pypi.python.org/pypi/pubnub/)
 ## 项目结构:
 ```python
  News-Spider
